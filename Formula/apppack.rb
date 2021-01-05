@@ -20,6 +20,6 @@ class Apppack < Formula
   end
 
   test do
-    system "#{bin}/program --version"
+    system "#{bin}/apppack version"
   end
 end
