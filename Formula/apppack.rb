@@ -5,21 +5,21 @@
 class Apppack < Formula
   desc "CLI for AppPack.io"
   homepage "https://apppack.io"
-  version "1.1.0"
+  version "1.2.0"
   license "Apache-2.0"
   bottle :unneeded
 
-  if OS.mac?
-    url "https://github.com/apppackio/apppack/releases/download/v1.1.0/apppack_1.1.0_Darwin_x86_64.tar.gz"
-    sha256 "0e427209a6a802db80fa44cbd251ef7592d3b350fc86138aa47e77438fe880af"
+  if OS.mac? && Hardware::CPU.intel?
+    url "https://github.com/apppackio/apppack/releases/download/v1.2.0/apppack_1.2.0_Darwin_x86_64.tar.gz"
+    sha256 "9afd284605e27080a3869a98382951a1e9b76f7c652acbc6a426da378432cb7a"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/apppackio/apppack/releases/download/v1.1.0/apppack_1.1.0_Linux_x86_64.tar.gz"
-    sha256 "30c88d14cf17b49932f27cc5872c4a510d88f42e2759e2dd433afb0a446a379c"
+    url "https://github.com/apppackio/apppack/releases/download/v1.2.0/apppack_1.2.0_Linux_x86_64.tar.gz"
+    sha256 "cf263c41f2e151498cde6049a1b02af3af9dd98aa1e1201a97f4abcf4d10c79a"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/apppackio/apppack/releases/download/v1.1.0/apppack_1.1.0_Linux_arm64.tar.gz"
-    sha256 "6ec93f0938a115d01e966828ed701e7fe9caad320859d6c65e767ba6c5c74274"
+    url "https://github.com/apppackio/apppack/releases/download/v1.2.0/apppack_1.2.0_Linux_arm64.tar.gz"
+    sha256 "fbe5e3cd557acf7c871b05f32a9672ec9f418e65985b409160ae96bc71159109"
   end
 
   def install
