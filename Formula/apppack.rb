@@ -5,25 +5,30 @@
 class Apppack < Formula
   desc "CLI for AppPack.io"
   homepage "https://apppack.io"
-  version "2.3.1"
+  version "2.3.2"
   license "Apache-2.0"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/apppackio/apppack/releases/download/v2.3.1/apppack_2.3.1_Darwin_x86_64.tar.gz"
-    sha256 "6295024a80cf5d115f43af58d58872eb48999c1907ffc42a09fb28b01c90ca50"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/apppackio/apppack/releases/download/v2.3.2/apppack_2.3.2_Darwin_x86_64.tar.gz"
+      sha256 "7e2037362681b9216b52b3fcf0f76812e38611c6a0dca622261a5a8a224fee40"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/apppackio/apppack/releases/download/v2.3.2/apppack_2.3.2_Darwin_arm64.tar.gz"
+      sha256 "1d539980c42e233b66e30ac1134ae7721097cddcdb7e9a1217ef15f66838e9e2"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/apppackio/apppack/releases/download/v2.3.1/apppack_2.3.1_Darwin_arm64.tar.gz"
-    sha256 "28bdaad8ae8d30c49bbfb27c6abb6248bfbf7069fa8fb13ccaad19acedf8062b"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/apppackio/apppack/releases/download/v2.3.1/apppack_2.3.1_Linux_x86_64.tar.gz"
-    sha256 "eb0b05253802174175c0a882dda2e2ab70d23d2ea45cee62a65ae92a22c1eb7e"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/apppackio/apppack/releases/download/v2.3.1/apppack_2.3.1_Linux_arm64.tar.gz"
-    sha256 "bc9040ff6b2d3ff74de7f3387d1ba0d147b5ea2c02d5fd5e668d33c7494b0e33"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/apppackio/apppack/releases/download/v2.3.2/apppack_2.3.2_Linux_x86_64.tar.gz"
+      sha256 "b93e73b56624d492d2fd60c93ee0f36d2cc9ca92dd9a64fc44cac06fcb841b08"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/apppackio/apppack/releases/download/v2.3.2/apppack_2.3.2_Linux_arm64.tar.gz"
+      sha256 "7f48b6f790beb5637fe54c4478aaa12b70978c132d88dac253cfd1efb1cbb834"
+    end
   end
 
   def install
