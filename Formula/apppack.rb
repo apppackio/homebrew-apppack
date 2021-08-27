@@ -5,29 +5,29 @@
 class Apppack < Formula
   desc "CLI for AppPack.io"
   homepage "https://apppack.io"
-  version "2.4.1"
+  version "2.4.2"
   license "Apache-2.0"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/apppackio/apppack/releases/download/v2.4.1/apppack_2.4.1_Darwin_x86_64.tar.gz"
-      sha256 "60d2ebdea2291380424c922c05d4d91981580fe00295cd732482abad7b3df834"
+      url "https://github.com/apppackio/apppack/releases/download/v2.4.2/apppack_2.4.2_Darwin_x86_64.tar.gz"
+      sha256 "756b89ba221163840868b6825f29724c01d70f4503f13620fc74b4c2e689de41"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/apppackio/apppack/releases/download/v2.4.1/apppack_2.4.1_Darwin_arm64.tar.gz"
-      sha256 "07a18349781d6aeb0842e7a938459dbc3989d50e5ae5bd721f3534d4489dbcaa"
+      url "https://github.com/apppackio/apppack/releases/download/v2.4.2/apppack_2.4.2_Darwin_arm64.tar.gz"
+      sha256 "5326d8f5c78aaa5cace0ab7cd9dbcd408267796ee371fe0923a46a3e90a06ebb"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/apppackio/apppack/releases/download/v2.4.1/apppack_2.4.1_Linux_x86_64.tar.gz"
-      sha256 "39fe4528ed9ad7a3f751a202c77c593917a5c7d24d50b1785b9cba3776b79aa6"
+      url "https://github.com/apppackio/apppack/releases/download/v2.4.2/apppack_2.4.2_Linux_x86_64.tar.gz"
+      sha256 "6ca479e835c41e04f4ee4ac15f4ba1ad8abed577f13660efe4fa3dfab137e0fa"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/apppackio/apppack/releases/download/v2.4.1/apppack_2.4.1_Linux_arm64.tar.gz"
-      sha256 "11f3eec6f7c565fc0a8ed1ed82ae42ecc3f7f1bc26580b1872f29d98716174b4"
+      url "https://github.com/apppackio/apppack/releases/download/v2.4.2/apppack_2.4.2_Linux_arm64.tar.gz"
+      sha256 "9365c7bba35dabc97b5d831aee0fb1f5786134af1ccf8755ba8ad85fd90f7803"
     end
   end
 
