@@ -5,34 +5,45 @@
 class Apppack < Formula
   desc "CLI for AppPack.io"
   homepage "https://apppack.io"
-  version "2.5.0"
+  version "3.0.0"
   license "Apache-2.0"
-  bottle :unneeded
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/apppackio/apppack/releases/download/v2.5.0/apppack_2.5.0_Darwin_x86_64.tar.gz"
-      sha256 "e02724fd3c835966053562d5f49f8e154a4496ef0dead3612bb7618c3399aa97"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/apppackio/apppack/releases/download/v2.5.0/apppack_2.5.0_Darwin_arm64.tar.gz"
-      sha256 "b764494e0a356af9751e6898e1ebf56f09b813bebe6cbc1a1acaee7db8b1e721"
+      url "https://github.com/apppackio/apppack/releases/download/v3.0.0/apppack_3.0.0_Darwin_arm64.tar.gz"
+      sha256 "1e7a2493db5c19644bf49637d6dae67a00060d887d32a78164e2e15324dab470"
+
+      def install
+        bin.install "apppack"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/apppackio/apppack/releases/download/v3.0.0/apppack_3.0.0_Darwin_x86_64.tar.gz"
+      sha256 "ea9584e47952d2b93d76c2b9e2fd8e606dfcfd38022e399b032e6dbf86a27a98"
+
+      def install
+        bin.install "apppack"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/apppackio/apppack/releases/download/v2.5.0/apppack_2.5.0_Linux_x86_64.tar.gz"
-      sha256 "8cf3e3bb4e2c8da5061225e31b3b21115b72bf602a55ac8f3d7e0c6fe6a17dca"
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/apppackio/apppack/releases/download/v2.5.0/apppack_2.5.0_Linux_arm64.tar.gz"
-      sha256 "58e3a33802617fc5113d9c80d64231383ce40e62d38052bd7afe3a9ba04a39ca"
-    end
-  end
+      url "https://github.com/apppackio/apppack/releases/download/v3.0.0/apppack_3.0.0_Linux_arm64.tar.gz"
+      sha256 "988178c731c184de0886ce43fa0e8c0949bfc4d0b186e99b0f55b390a1389f4b"
 
-  def install
-    bin.install "apppack"
+      def install
+        bin.install "apppack"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/apppackio/apppack/releases/download/v3.0.0/apppack_3.0.0_Linux_x86_64.tar.gz"
+      sha256 "6d2d9a15ef15992a891ffb4554a7a4ab61ab1e1d722d9807230cf2cb3c0f6a3d"
+
+      def install
+        bin.install "apppack"
+      end
+    end
   end
 
   test do
