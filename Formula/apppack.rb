@@ -5,21 +5,21 @@
 class Apppack < Formula
   desc "CLI for AppPack.io"
   homepage "https://apppack.io"
-  version "3.1.0"
+  version "3.2.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/apppackio/apppack/releases/download/v3.1.0/apppack_3.1.0_Darwin_arm64.tar.gz"
-      sha256 "95108f072188e1ce2b14bdc6613707da7834098ab1151d19c94b0b96f5bd082f"
+      url "https://github.com/apppackio/apppack/releases/download/v3.2.0/apppack_3.2.0_Darwin_arm64.tar.gz"
+      sha256 "79b90bd6e8cc189e9b6d955ac330b110645b0e08f2fa21994496ac2c356bd263"
 
       def install
         bin.install "apppack"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/apppackio/apppack/releases/download/v3.1.0/apppack_3.1.0_Darwin_x86_64.tar.gz"
-      sha256 "bf10dcc25b9afa5e1968f09b6eed91caac22b164d233c42dcf5bcb1927e0e1db"
+      url "https://github.com/apppackio/apppack/releases/download/v3.2.0/apppack_3.2.0_Darwin_x86_64.tar.gz"
+      sha256 "0b6c864609d1b88a5620cfb43ec08ea88dd24705cab8d8207f0d39e6c9d11ccb"
 
       def install
         bin.install "apppack"
@@ -28,17 +28,17 @@ class Apppack < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/apppackio/apppack/releases/download/v3.1.0/apppack_3.1.0_Linux_arm64.tar.gz"
-      sha256 "4defdadc87ab710b540c7727070fe799856d521cc708a90a158249febe39a0c4"
+    if Hardware::CPU.intel?
+      url "https://github.com/apppackio/apppack/releases/download/v3.2.0/apppack_3.2.0_Linux_x86_64.tar.gz"
+      sha256 "ca26e2139ab6a5551681c024b739ae6271371c9823baf76b65b53b036016c63c"
 
       def install
         bin.install "apppack"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/apppackio/apppack/releases/download/v3.1.0/apppack_3.1.0_Linux_x86_64.tar.gz"
-      sha256 "81a7e47775c3b3b22845a5570271a277934be8a56cd360d8ddcc993778e8d475"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/apppackio/apppack/releases/download/v3.2.0/apppack_3.2.0_Linux_arm64.tar.gz"
+      sha256 "9a961212692b4be6efac9370bc93fc3d44b10d5b410713aba609ead41f87fe22"
 
       def install
         bin.install "apppack"
