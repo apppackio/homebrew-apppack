@@ -5,21 +5,21 @@
 class Apppack < Formula
   desc "CLI for AppPack.io"
   homepage "https://apppack.io"
-  version "3.2.0"
+  version "4.0.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/apppackio/apppack/releases/download/v3.2.0/apppack_3.2.0_Darwin_arm64.tar.gz"
-      sha256 "79b90bd6e8cc189e9b6d955ac330b110645b0e08f2fa21994496ac2c356bd263"
+      url "https://github.com/apppackio/apppack/releases/download/v4.0.0/apppack_4.0.0_Darwin_arm64.tar.gz"
+      sha256 "f55a190d2e8dc255dddb5565af8114943bcf5363d39c6185262302fad64e23e2"
 
       def install
         bin.install "apppack"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/apppackio/apppack/releases/download/v3.2.0/apppack_3.2.0_Darwin_x86_64.tar.gz"
-      sha256 "0b6c864609d1b88a5620cfb43ec08ea88dd24705cab8d8207f0d39e6c9d11ccb"
+      url "https://github.com/apppackio/apppack/releases/download/v4.0.0/apppack_4.0.0_Darwin_x86_64.tar.gz"
+      sha256 "1b5a5e89356dc5cd4c7eb82f172ce6117553072d1129f4882c000d43228ee532"
 
       def install
         bin.install "apppack"
@@ -29,16 +29,16 @@ class Apppack < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/apppackio/apppack/releases/download/v3.2.0/apppack_3.2.0_Linux_x86_64.tar.gz"
-      sha256 "ca26e2139ab6a5551681c024b739ae6271371c9823baf76b65b53b036016c63c"
+      url "https://github.com/apppackio/apppack/releases/download/v4.0.0/apppack_4.0.0_Linux_x86_64.tar.gz"
+      sha256 "f36e750eeca3fba9521a900413d28f595d21de8bce6ec001447545cc53133253"
 
       def install
         bin.install "apppack"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/apppackio/apppack/releases/download/v3.2.0/apppack_3.2.0_Linux_arm64.tar.gz"
-      sha256 "9a961212692b4be6efac9370bc93fc3d44b10d5b410713aba609ead41f87fe22"
+      url "https://github.com/apppackio/apppack/releases/download/v4.0.0/apppack_4.0.0_Linux_arm64.tar.gz"
+      sha256 "ba3a9792e55fa0ff54a94975dd424d628856199498d34bfb9634c9413b6eb9e7"
 
       def install
         bin.install "apppack"
