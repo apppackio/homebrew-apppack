@@ -5,21 +5,21 @@
 class Apppack < Formula
   desc "CLI for AppPack.io"
   homepage "https://apppack.io"
-  version "4.0.4"
+  version "4.0.5"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/apppackio/apppack/releases/download/v4.0.4/apppack_4.0.4_Darwin_x86_64.tar.gz"
-      sha256 "7c842ec95ba560747facf794d294615f9f500d592d363cd6ef93ea53597fd65a"
+    if Hardware::CPU.arm?
+      url "https://github.com/apppackio/apppack/releases/download/v4.0.5/apppack_4.0.5_Darwin_arm64.tar.gz"
+      sha256 "c28eb403452a841cba1d43dca2586339c7a8ffb483b83f5704acc94224509f4c"
 
       def install
         bin.install "apppack"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/apppackio/apppack/releases/download/v4.0.4/apppack_4.0.4_Darwin_arm64.tar.gz"
-      sha256 "ea04c489387682c57193ac1ef27408d0851d6b7e5b42150a3dea5d46ff7ae3d8"
+    if Hardware::CPU.intel?
+      url "https://github.com/apppackio/apppack/releases/download/v4.0.5/apppack_4.0.5_Darwin_x86_64.tar.gz"
+      sha256 "e957659821f180da310175395b3ce8a648de189ac42e05e52ae73a1461418925"
 
       def install
         bin.install "apppack"
@@ -29,16 +29,16 @@ class Apppack < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/apppackio/apppack/releases/download/v4.0.4/apppack_4.0.4_Linux_x86_64.tar.gz"
-      sha256 "31aecc4987b9c9a39eaaa8c71cd95e8aa0ff9da40fa57047a94b0a28ae41f76e"
+      url "https://github.com/apppackio/apppack/releases/download/v4.0.5/apppack_4.0.5_Linux_x86_64.tar.gz"
+      sha256 "7b9457517e2061e34b295f12a7cb0be45f32c8945dd320e6c9484df2c20e3e60"
 
       def install
         bin.install "apppack"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/apppackio/apppack/releases/download/v4.0.4/apppack_4.0.4_Linux_arm64.tar.gz"
-      sha256 "3062b7f39ae35aea7a6bc5a60e6f8a216fcc4313d224a692e907a0b8428694ab"
+      url "https://github.com/apppackio/apppack/releases/download/v4.0.5/apppack_4.0.5_Linux_arm64.tar.gz"
+      sha256 "c93883eaa091463fc96fef7682fc286bd7e8231b40e3de5a07c1f482fdf9d5cc"
 
       def install
         bin.install "apppack"
