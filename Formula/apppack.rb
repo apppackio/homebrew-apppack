@@ -5,21 +5,21 @@
 class Apppack < Formula
   desc "CLI for AppPack.io"
   homepage "https://apppack.io"
-  version "4.2.0"
+  version "4.3.0"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/apppackio/apppack/releases/download/v4.2.0/apppack_4.2.0_Darwin_arm64.tar.gz"
-      sha256 "1af140c9f9039f0142b196e4f3aa3de2f643063bff4a3470de7a6ccf72f26629"
+    if Hardware::CPU.intel?
+      url "https://github.com/apppackio/apppack/releases/download/v4.3.0/apppack_4.3.0_Darwin_x86_64.tar.gz"
+      sha256 "f7d8bb74e314e376f800004ceedd85fb6155f0fbad14038d91e746191a17a24b"
 
       def install
         bin.install "apppack"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/apppackio/apppack/releases/download/v4.2.0/apppack_4.2.0_Darwin_x86_64.tar.gz"
-      sha256 "f24742b6903e5d3a0d03517dc904fd1b404a2c431c3558c6518258b17e009ddb"
+    if Hardware::CPU.arm?
+      url "https://github.com/apppackio/apppack/releases/download/v4.3.0/apppack_4.3.0_Darwin_arm64.tar.gz"
+      sha256 "29f0ff527ca70d1b3d749caa960ed44d60c9fc8fdab0a2315e006c3e638fff27"
 
       def install
         bin.install "apppack"
@@ -28,17 +28,17 @@ class Apppack < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/apppackio/apppack/releases/download/v4.2.0/apppack_4.2.0_Linux_x86_64.tar.gz"
-      sha256 "7e2ecd029709de23fc2ded493941d552fc519d54bda029584c4bb321651c3d6e"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/apppackio/apppack/releases/download/v4.3.0/apppack_4.3.0_Linux_arm64.tar.gz"
+      sha256 "8a02f5241b91cc9e66f4cba69da0c063c622ff161542ae8e7dd1a80bec12f449"
 
       def install
         bin.install "apppack"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/apppackio/apppack/releases/download/v4.2.0/apppack_4.2.0_Linux_arm64.tar.gz"
-      sha256 "ee0c29dc18c4728f04a0eb34eacb4ecd9de1cec89515e48b0b0ce7012ef8d7a3"
+    if Hardware::CPU.intel?
+      url "https://github.com/apppackio/apppack/releases/download/v4.3.0/apppack_4.3.0_Linux_x86_64.tar.gz"
+      sha256 "9a491eb0cc8f634a0550f973240caa3479bf3aa90bda34dd04296cc581c552e2"
 
       def install
         bin.install "apppack"
