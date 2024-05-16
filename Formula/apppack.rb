@@ -5,21 +5,21 @@
 class Apppack < Formula
   desc "CLI for AppPack.io"
   homepage "https://apppack.io"
-  version "4.4.1"
+  version "4.5.0"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/apppackio/apppack/releases/download/v4.4.1/apppack_4.4.1_Darwin_arm64.tar.gz"
-      sha256 "fba582246fd76d5e664337df53adb40bc16fb61f7110b5ade0618cacc4c6401b"
+    on_intel do
+      url "https://github.com/apppackio/apppack/releases/download/v4.5.0/apppack_4.5.0_Darwin_x86_64.tar.gz"
+      sha256 "9da38311434849185de2fc070577bad59a04985296cfd52e9cf5f3324a056f2b"
 
       def install
         bin.install "apppack"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/apppackio/apppack/releases/download/v4.4.1/apppack_4.4.1_Darwin_x86_64.tar.gz"
-      sha256 "18b70ec2f8ac7750aa341792e24f9099825b0533717d3eb74d741eb36bcb78a8"
+    on_arm do
+      url "https://github.com/apppackio/apppack/releases/download/v4.5.0/apppack_4.5.0_Darwin_arm64.tar.gz"
+      sha256 "af31712ea4d5189ec843d4ab66cfc5aaf5fbd4a400c55c5ab311ecccbc7e1ece"
 
       def install
         bin.install "apppack"
@@ -28,20 +28,24 @@ class Apppack < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/apppackio/apppack/releases/download/v4.4.1/apppack_4.4.1_Linux_arm64.tar.gz"
-      sha256 "cb81eb650590d699aebb298c577e339b7b7b397dffc48c7951d769d321ab3274"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/apppackio/apppack/releases/download/v4.5.0/apppack_4.5.0_Linux_x86_64.tar.gz"
+        sha256 "3270a0d3565a0cdb163c80c422d4d421ffd5d25b6d4fc213fee868ba9b43ca1e"
 
-      def install
-        bin.install "apppack"
+        def install
+          bin.install "apppack"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/apppackio/apppack/releases/download/v4.4.1/apppack_4.4.1_Linux_x86_64.tar.gz"
-      sha256 "5c527b02c3addbd137f22747adda54abae16d234201966e84d72fb33bf49385a"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/apppackio/apppack/releases/download/v4.5.0/apppack_4.5.0_Linux_arm64.tar.gz"
+        sha256 "fdef23489b808f66b9a42fac77a3fc59e46dca0c0f642ba45fa22911faf01f05"
 
-      def install
-        bin.install "apppack"
+        def install
+          bin.install "apppack"
+        end
       end
     end
   end
