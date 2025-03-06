@@ -5,21 +5,21 @@
 class Apppack < Formula
   desc "CLI for AppPack.io"
   homepage "https://apppack.io"
-  version "4.6.4"
+  version "4.6.5"
   license "Apache-2.0"
 
   on_macos do
     on_intel do
-      url "https://github.com/apppackio/apppack/releases/download/v4.6.4/apppack_4.6.4_Darwin_x86_64.tar.gz"
-      sha256 "b677549fa78e74e974243790389ff0d10647a14961e4912672e1fda6befedfd3"
+      url "https://github.com/apppackio/apppack/releases/download/v4.6.5/apppack_4.6.5_Darwin_x86_64.tar.gz"
+      sha256 "1d501a4edcd3ccd848530e38f3992f9d2951f1ac9adf8356dd2cb9d89ab84d3b"
 
       def install
         bin.install "apppack"
       end
     end
     on_arm do
-      url "https://github.com/apppackio/apppack/releases/download/v4.6.4/apppack_4.6.4_Darwin_arm64.tar.gz"
-      sha256 "55bf8d72170d28760313d79070ad5f28981a20209b0599d6e40502894489f522"
+      url "https://github.com/apppackio/apppack/releases/download/v4.6.5/apppack_4.6.5_Darwin_arm64.tar.gz"
+      sha256 "7996f00d49e571afec3ee5b7c1edb321a32be9446260f71daff65e2c7cb8c767"
 
       def install
         bin.install "apppack"
@@ -30,8 +30,8 @@ class Apppack < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/apppackio/apppack/releases/download/v4.6.4/apppack_4.6.4_Linux_x86_64.tar.gz"
-        sha256 "0ba18b6d8834e6d92901513ac1f77d39f91f3b9ac86cae62effb52a65bb918d1"
+        url "https://github.com/apppackio/apppack/releases/download/v4.6.5/apppack_4.6.5_Linux_x86_64.tar.gz"
+        sha256 "31bb5f0b39a25c0de3554af60c3ea850db3f0c6266c9f0b99088f048e5f866ab"
 
         def install
           bin.install "apppack"
@@ -40,8 +40,8 @@ class Apppack < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/apppackio/apppack/releases/download/v4.6.4/apppack_4.6.4_Linux_arm64.tar.gz"
-        sha256 "41dbb4e0ce3ff2a84e55820801d8489702cb5c4f85b081716ec4838f3296f539"
+        url "https://github.com/apppackio/apppack/releases/download/v4.6.5/apppack_4.6.5_Linux_arm64.tar.gz"
+        sha256 "7e2a76a20efa7057974e8dc7533859387141678f901cdab28a1d321786d254f0"
 
         def install
           bin.install "apppack"
